@@ -4,6 +4,7 @@ import BackgroundImage from "./assets/images/backgrondOne.jpg";
 import Clock from "./components/Clock";
 import SearchBar from "./components/SearchBar";
 import Weather from "./components/Weather";
+import Drawer from "./components/Drawer";
 
 const App = () => {
   return (
@@ -35,6 +36,7 @@ const App = () => {
           textAlign: "center",
         }}
       >
+        <Drawer />
         <Clock />
         <SearchBar />
         <Weather />
