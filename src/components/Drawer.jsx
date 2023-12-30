@@ -13,8 +13,8 @@ import GmailLogo from "../assets/images/gmail.svg";
 import VerselLogo from "../assets/images/versel.png";
 
 const imageStyles = {
-  width: "40px",
-  height: "40px",
+  width: "50px",
+  height: "50px",
   objectFit: "cover",
   objectPosition: "center",
 };
@@ -25,8 +25,8 @@ const Drawer = () => {
       position={"absolute"}
       sx={{
         background: "red",
-        height: "70vh",
-        top: "20%",
+        height: "75vh",
+        top: "5em",
         left: "2em",
         borderRadius: "8px",
         // padding: "0.5em",
@@ -36,7 +36,7 @@ const Drawer = () => {
         "&:hover": {
           background: "#111",
           padding: "0.5em 1em",
-          width: "100px",
+          width: "110px",
           overflowY: "scroll",
           transitionDelay: "overflowY 1s",
           animation: " borderRadius 3s infinite linear",

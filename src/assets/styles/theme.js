@@ -11,7 +11,6 @@ const theme = createTheme({
       contrastText: "#fff",
     },
   },
-  "&.box": {},
   components: {
     MuiIconButton: {
       styleOverrides: {
@@ -32,7 +31,7 @@ const theme = createTheme({
               },
               backgroundImage: `linear-gradient(to left, #ff8a00, #e52e71, #1e90ff)`,
               animation:
-                "rotateGradient 5s infinite ease-in, borderRadius 3s infinite linear",
+                "rotateGradient 1s infinite ease-in, borderRadius 3s infinite linear",
               "@keyframes borderRadius": {
                 "0%": { boxShadow: "0 0 5px 5px #ff8a00" },
                 "50%": {
@@ -45,87 +44,71 @@ const theme = createTheme({
               "@keyframes rotateGradient": {
                 "0%": {
                   backgroundImage:
-                    "linear-gradient(to left, #ff8a00, #e52e71, #1e90ff)",
-                },
-                "5%": {
-                  backgroundImage:
-                    "linear-gradient(to top left, #ff8a00, #e52e71, #1e90ff)",
-                },
-                "10%": {
-                  backgroundImage:
-                    "linear-gradient(to top right, #ff8a00, #e52e71, #1e90ff)",
-                },
-                "15%": {
-                  backgroundImage:
-                    "linear-gradient(to bottom right, #ff8a00, #e52e71, #1e90ff)",
-                },
-                "20%": {
-                  backgroundImage:
                     "linear-gradient(to left bottom, #ff8a00, #e52e71, #1e90ff)",
                 },
-                "25%": {
-                  backgroundImage:
-                    "linear-gradient(to center bottom, #ff8a00, #e52e71, #1e90ff)",
-                },
-                "30%": {
-                  backgroundImage:
-                    "linear-gradient(to right bottom, #ff8a00, #e52e71, #1e90ff)",
-                },
-                "35%": {
-                  backgroundImage:
-                    "linear-gradient(to bottom left, #ff8a00, #e52e71, #1e90ff)",
-                },
-                "40%": {
-                  backgroundImage:
-                    "linear-gradient(to center left, #ff8a00, #e52e71, #1e90ff)",
-                },
-                "45%": {
-                  backgroundImage:
-                    "linear-gradient(to top left, #ff8a00, #e52e71, #1e90ff)",
-                },
-                "50%": {
-                  backgroundImage:
-                    "linear-gradient(to top center, #ff8a00, #e52e71, #1e90ff)",
-                },
-                "55%": {
-                  backgroundImage:
-                    "linear-gradient(to top left, #ff8a00, #e52e71, #1e90ff)",
-                },
-                "60%": {
-                  backgroundImage:
-                    "linear-gradient(to left top, #ff8a00, #e52e71, #1e90ff)",
-                },
-                "65%": {
+                "9%": {
                   backgroundImage:
                     "linear-gradient(to left center, #ff8a00, #e52e71, #1e90ff)",
                 },
-                "70%": {
+                "18%": {
                   backgroundImage:
-                    "linear-gradient(to left bottom, #ff8a00, #e52e71, #1e90ff)",
+                    "linear-gradient(to left top, #ff8a00, #e52e71, #1e90ff)",
                 },
-                "75%": {
+                "27%": {
                   backgroundImage:
-                    "linear-gradient(to right bottom, #ff8a00, #e52e71, #1e90ff)",
+                    "linear-gradient(to top left, #ff8a00, #e52e71, #1e90ff)",
                 },
-                "80%": {
+                "36%": {
                   backgroundImage:
-                    "linear-gradient(to center bottom, #ff8a00, #e52e71, #1e90ff)",
+                    "linear-gradient(to top center, #ff8a00, #e52e71, #1e90ff)",
                 },
-                "85%": {
+                "45%": {
                   backgroundImage:
-                    "linear-gradient(to bottom left, #ff8a00, #e52e71, #1e90ff)",
+                    "linear-gradient(to top right, #ff8a00, #e52e71, #1e90ff)",
                 },
-                "90%": {
+                "54%": {
                   backgroundImage:
-                    "linear-gradient(to right bottom, #ff8a00, #e52e71, #1e90ff)",
+                    "linear-gradient(to right top, #ff8a00, #e52e71, #1e90ff)",
                 },
-                "95%": {
+                "63%": {
                   backgroundImage:
                     "linear-gradient(to right center, #ff8a00, #e52e71, #1e90ff)",
                 },
+                "72%": {
+                  backgroundImage:
+                    "linear-gradient(to right bottom , #ff8a00, #e52e71, #1e90ff)",
+                },
+                "81%": {
+                  backgroundImage:
+                    "linear-gradient(to bottom right, #ff8a00, #e52e71, #1e90ff)",
+                },
+                "90%": {
+                  backgroundImage:
+                    "linear-gradient(to bottom center, #ff8a00, #e52e71, #1e90ff)",
+                },
                 "100%": {
                   backgroundImage:
-                    "linear-gradient(to right top, #ff8a00, #e52e71, #1e90ff)",
+                    "linear-gradient(to bottom left, #ff8a00, #e52e71, #1e90ff)",
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+    MuiGrid: {
+      styleOverrides: {
+        root: {
+          "&.grid": {
+            "&:hover": {
+              animation: " borderRadius 3s infinite linear",
+              "@keyframes borderRadius": {
+                "0%": { boxShadow: "0 0 5px 5px #ff8a00" },
+                "50%": {
+                  boxShadow: "0 0 5px 5px #e52e71",
+                },
+                "100%": {
+                  boxShadow: "0 0 5px 5px #1e90ff",
                 },
               },
             },

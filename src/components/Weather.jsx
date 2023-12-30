@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Typography from "@mui/material/Typography";
-import { Box, Grid, Skeleton } from "@mui/material";
+import { Box, Divider, Grid, Skeleton } from "@mui/material";
+import { LocationOn, Navigation } from "@mui/icons-material";
 
 const Weather = () => {
   const [ipApiData, setIpApiData] = useState(null);
@@ -36,80 +37,161 @@ const Weather = () => {
   }, []);
 
   return (
-    // <div>
-    //   <Typography variant="h4" sx={{ color: "#fff" }}>
-    //     {weatherData?.main?.temp} °C
-    //     {weatherData && (
-    //       <img
-    //         src={`https://openweathermap.org/img/wn/20n.png`}
-    //         alt="icon"
-    //         style={{ background: "#fff" }}
-    //       />
-    //     )}
-    //     {weatherData?.weather[0].description}
-    //   </Typography>
-    // <Typography variant="h6">
-    //   {ipApiData?.city}, {ipApiData?.region}
-    // </Typography>
-    // </div>
     <Box>
-      <Grid container display={"flex"} justifyContent={"center"}>
+      {weatherData && (
         <Grid
-          item
-          xs={4}
-          sx={{ background: "#000", borderRadius: "4px" }}
+          className="grid"
+          container
+          width={"70%"}
           p={2}
+          m={"0 auto"}
+          sx={{ background: "#000", borderRadius: "4px" }}
         >
-          {weatherData ? (
-            <>
-              <Typography variant="h4" sx={{ color: "#fff" }}>
-                {weatherData?.main?.temp} °C
+          <Grid
+            item
+            xs={4}
+            display={"flex"}
+            alignItems={"center"}
+            justifyContent={"space-evenly"}
+          >
+            <Box
+              display={"flex"}
+              alignItems={"center"}
+              flexDirection={"column"}
+            >
+              <Box>
+                <Typography variant="h5">{weatherData.visibility} m</Typography>
+              </Box>
+              <Box display={"flex"} alignItems={"center"}>
+                <Typography ml={1}>Visibility</Typography>
+              </Box>
+            </Box>
+            <Box
+              display={"flex"}
+              alignItems={"center"}
+              flexDirection={"column"}
+            >
+              <Box>
+                <Typography variant="h5">
+                  {weatherData.main.pressure} mb
+                </Typography>
+              </Box>
+              <Box display={"flex"} alignItems={"center"}>
+                <Typography ml={1}>Pressure</Typography>
+              </Box>
+            </Box>
+            <Box
+              display={"flex"}
+              alignItems={"center"}
+              flexDirection={"column"}
+            >
+              <Box>
+                <Typography variant="h5">
+                  {weatherData.main.humidity}%
+                </Typography>
+              </Box>
+              <Box>
+                <Typography ml={1}>Humidity</Typography>
+              </Box>
+            </Box>
+          </Grid>
+          <Grid
+            item
+            xs={4}
+            display={"flex"}
+            alignItems={"center"}
+            justifyContent={"space-evenly"}
+          >
+            <Box
+              display={"flex"}
+              alignItems={"center"}
+              flexDirection={"column"}
+            >
+              <Box>
+                <Typography variant="h5">
+                  {weatherData.main.feels_like} &deg;C
+                </Typography>
+              </Box>
+              <Box>
+                <Typography ml={1}>Feels Like</Typography>
+              </Box>
+            </Box>
+            <Box
+              display={"flex"}
+              alignItems={"center"}
+              flexDirection={"column"}
+            >
+              <Box>
+                <Typography variant="h4">
+                  {weatherData.main.temp} &deg;C
+                </Typography>
+              </Box>
+              <Box display={"flex"} alignItems={"center"}>
+                <LocationOn />
+                <Typography ml={1}>
+                  {ipApiData.city},{ipApiData.country_code}
+                </Typography>
+              </Box>
+            </Box>
+          </Grid>
+          <Grid
+            item
+            xs={4}
+            display={"flex"}
+            alignItems={"center"}
+            justifyContent={"space-evenly"}
+            position={"relative"}
+          >
+            <Box
+              display={"flex"}
+              flexDirection={"column"}
+              alignItems={"center"}
+              // position={"relative"}
+            >
+              <Navigation
+                sx={{
+                  position: "absolute",
+                  fontSize: "30px",
+                  left: 8,
+                  top: 12,
+                  transform: `rotate(${weatherData.wind.deg}deg)`,
+                }}
+              />
+              <Typography variant="h6">
+                {weatherData.wind.speed} km/h
               </Typography>
+              <Typography variant="">Wind</Typography>
+            </Box>
+
+            <Box display={"flex"} alignItems={"center"}>
               <Box
-                display={"flex"}
-                alignItems={"center"}
-                justifyContent={"center"}
+                sx={{
+                  background: "#fff",
+                  width: "40px",
+                  height: "40px",
+                  borderRadius: "8px",
+                }}
               >
                 <img
-                  src={`https://openweathermap.org/img/wn/${weatherData?.weather[0].icon}.png`}
-                  alt="icon"
+                  src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`}
+                  alt="weatherIcon"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    objectPosition: "center",
+                  }}
                 />
-                <Typography>{weatherData?.weather[0].main}</Typography>
               </Box>
-              <Typography variant="h6">
-                {weatherData.name},{" "}
-                {weatherData.name !== ipApiData?.city && ipApiData?.city} -{" "}
-                {weatherData.sys.country}
-                {/* {ipApiData?.city}, {ipApiData?.region} */}
-              </Typography>
-            </>
-          ) : (
-            <>
-              <Skeleton
-                width={"100%"}
-                height={40}
-                variant="text"
-                sx={{ background: "#444444" }}
-                animation="wave"
-              />
-              <Skeleton
-                width={"100%"}
-                height={40}
-                variant="text"
-                sx={{ background: "#444444" }}
-                animation="wave"
-              />
-              <Skeleton
-                width={"100%"}
-                height={40}
-                variant="text"
-                sx={{ background: "#444444" }}
-                animation="wave"
-              />
-            </>
-          )}
+              <Box>
+                <Typography variant="h5" ml={2}>
+                  {weatherData.weather[0].main}
+                </Typography>
+              </Box>
+            </Box>
+          </Grid>
         </Grid>
-      </Grid>
+      )}
     </Box>
   );
 };

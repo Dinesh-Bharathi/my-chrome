@@ -13,7 +13,8 @@ const App = () => {
         position: "relative",
         minHeight: "100vh",
         background: "rgba(0, 0, 0, 0.5)",
-        overflow: "hidden",
+        overflowX: "hidden",
+        overflowY: "hidden",
       }}
     >
       <div
